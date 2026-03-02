@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Tracker</title>
+     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+     <script src="Tailwind.init.css"></script>
+
+</head>
+<body>
+   <header class="w-[80%] mx-auto ">
+    <h1 class="text-3xl font-bold text-black">Job Application Tracker</h1>
+    <br>
+    <div class="grid grid-cols-3 gap-y-8 gap-x-8">
+        <div class="bg-gray-50 p-4">
+            <p>Total</p>
+            <p id="tCount" class="text-blue-500">0</p>
+        </div>
+        <div class="bg-gray-50 p-4">
+            <p>Interview</p>
+            <p id="iCount" class="text-green-600">0</p>
+        </div>
+        <div class="bg-gray-50 p-4">
+            <p>Rejected</p>
+            <p id="rCount" class="text-red-700">0</p>
+        </div>
+    </div>
+
+
+   </header>
+   <br>
+   <br>
+   <hr class="to-gray-100">
+
+   <main class="w-[80%] mx-auto py-3">
+    <div>
+      <div class="flex justify-between">
+         <div>
+            <p class="text-blue-700 font-bold">Available Jobs</p>
+         </div>
+         <div>
+            <p id="tCount">0 jobs</p>
+         </div>
+      </div>
+      <div class="py-5">
+        <button id="all-btn"        class="bg-blue-700 text-white px-8 py-2">All</button>
+        <button id="interview-btn"   class="bg-gray-50 px-8 py-2" >Interview</button>
+        <button id="rejected-btn" class="bg-gray-50 px-8 py-2">Rejected</button>
+      </div>
+        
+        
+    </div>
+
+    <section id="allcards" class="py-12 space-y-5">
+        <!-- card 1 -->
+        <div class="flex justify-between border border-blue-800 p-3">
+             <!-- main part 1 -->
+         <div class="space-y-4">
+            <!-- part 1 -->
+            <div>
+          
+                <p class="jobName text-4xl">Mobile First Crop</p>
+                <p class="PName">React Native Developer</p>
+            </div>
+            <!-- part 3 -->
+           <div>
+            <p class="status">Remote . Full Time . $130,000-$150,000</p>
+          </div>
+            <!-- part 2 -->
+          <div class="flex gap-3">
+            <p class="light bg-gray-300">Not Applied</p>
+         
+          </div>
+
+
+
+          <div>
+             <p class="notes">Build cross-platfrom mobile applications using react native.</p>
+          </div>
+           
+          
+          <!-- part 4 -->
+           <div class="flex gap-5">
+            <button class="interview2-btn bg-white px-4 py-2 border-1 border-green-500 text-green-600">Interview</button>
+            <button class="rejected2-btn bg-white px-4 py-2 border-1 border-red-600 text-red-700">Rejected</button>
+           </div>
+           </div>
+        
+         <!-- main part 2 -->
+         <div>
+            <button class="delete-btn bg-blue-300 px-4 py-2 ">Delete</button>
+         </div>
+         </div>
+        </div>
+
+        
