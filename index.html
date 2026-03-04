@@ -9,33 +9,32 @@
 
 </head>
 <body>
-   <header class="w-[80%] mx-auto ">
-    <h1 class="text-3xl font-bold text-black">Job Application Tracker</h1>
-    <br>
-    <div class="grid grid-cols-3 gap-y-8 gap-x-8">
-        <div class="bg-gray-50 p-4">
-            <p>Total</p>
-            <p id="tCount" class="text-blue-500">0</p>
-        </div>
-        <div class="bg-gray-50 p-4">
-            <p>Interview</p>
-            <p id="iCount" class="text-green-600">0</p>
-        </div>
-        <div class="bg-gray-50 p-4">
-            <p>Rejected</p>
-            <p id="rCount" class="text-red-700">0</p>
-        </div>
-    </div>
+   <header class="w-[80%] mx-auto">
+<h1 class="text-3xl font-bold">Job Application Tracker</h1>
 
+<div class="grid grid-cols-3 gap-8 mt-5">
+<div class="bg-gray-50 p-4">
+<p>Total</p>
+<p id="tCount" class="text-blue-700">0</p>
+</div>
 
-   </header>
-   <br>
-   <br>
-   <hr class="to-gray-100">
+<div class="bg-gray-50 p-4">
+<p>Interview</p>
+<p id="iCount" class="text-green-700">0</p>
+</div>
 
-   <main class="w-[80%] mx-auto py-3">
-    <div>
-      <div class="flex justify-between">
+<div class="bg-gray-50 p-4">
+<p>Rejected</p>
+<p id="rCount" class="text-red-700">0</p>
+</div>
+</div>
+</header>
+
+<hr class="my-5">
+
+<main class="w-[80%] mx-auto py-3">
+
+    <div class="flex justify-between">
          <div>
             <p class="text-blue-700 font-bold">Available Jobs</p>
          </div>
@@ -43,98 +42,211 @@
             <p id="tCount2">0 jobs</p>
          </div>
       </div>
-      <div class="py-5">
-        <button onclick="toggleStyle('all-btn')" id="all-btn" class=" bg-blue-700  text-white px-8 py-2" >All</button>
-        <button onclick="toggleStyle('interview-btn')" id="interview-btn" class="bg-gray-50 text-black px-8 py-2" >Interview</button>
-        <button onclick="toggleStyle('rejected-btn')" id="rejected-btn" class="bg-gray-50 text-black px-8 py-2">Rejected</button>
-      </div>
-        
-        
-    </div>
 
-    <section id="allcards" class="py-12 space-y-5">
-        <!-- card 1 -->
-        <div class="flex justify-between border border-blue-800 p-3">
-             <!-- main part 1 -->
-         <div class="space-y-4">
-            <!-- part 1 -->
-            <div>
-          
-                <p class="jobName text-4xl">Mobile First Crop</p>
-                <p class="PName">React Native Developer</p>
-            </div>
-            <!-- part 3 -->
-           <div>
-            <p class="status">Remote . Full Time . $130,000-$150,000</p>
-          </div>
-            <!-- part 2 -->
-          <div class="flex gap-3">
-            <p class="light bg-gray-300">Not Applied</p>
-         
-          </div>
+<div class="py-5 space-x-3">
+<button onclick="toggleStyle('all-btn')" id="all-btn" class="bg-blue-700 text-white px-8 py-2">All</button>
+<button onclick="toggleStyle('interview-btn')" id="interview-btn" class="bg-gray-300 text-black px-8 py-2">Interview</button>
+<button onclick="toggleStyle('rejected-btn')" id="rejected-btn" class="bg-gray-300 text-black px-8 py-2">Rejected</button>
+</div>
 
+<section id="filterSection" class="hidden space-y-5"></section>
 
+<section id="allcards" class="space-y-5 py-10">
 
-          <div>
-             <p class="notes">Build cross-platfrom mobile applications using react native.</p>
-          </div>
-           
-          
-          <!-- part 4 -->
-           <div class="flex gap-5">
-            <button   class=" bg-white px-4 py-2 border-1 border-green-500 text-green-600">Interview</button>
-            <button   class=" bg-white px-4 py-2 border-1 border-red-600 text-red-700">Rejected</button>
-           </div>
-           </div>
-        
-         <!-- main part 2 -->
-         <div>
-            <button class="delete-btn bg-blue-300 px-4 py-2 ">Delete</button>
-         </div>
-         </div>
-      
+<!-- CARD 1 -->
+<div class="flex justify-between border border-blue-800 p-4 card">
+<div class="space-y-4">
+<p class="jobName text-4xl">Mobile First Crop</p>
+<p class="PName">React Native Developer</p>
+<p class="status">Remote . Full Time . $130,000-$150,000</p>
+<p class="light inline-block bg-gray-300 px-3 py-1 rounded">Not Applied</p>
+<p class="notes">Build cross-platform mobile applications using React Native.</p>
 
-         <!-- card 2 -->
-        <div class="flex justify-between border border-blue-800 p-3">
-             <!-- main part 1 -->
-         <div class="space-y-4">
-            <!-- part 1 -->
-            <div>
-          
-                <p class="jobName text-4xl">Mobile First Crop</p>
-                <p class="PName">React Native Developer</p>
-            </div>
-            <!-- part 3 -->
-           <div>
-            <p class="status">Remote . Full Time . $130,000-$150,000</p>
-          </div>
-            <!-- part 2 -->
-          <div class="flex gap-3">
-            <p class="light bg-gray-300">Not Applied</p>
-         
-          </div>
+<div class="flex gap-5">
+<button class="interview-btn2 bg-white px-4 py-2 border border-green-500 text-green-600">Interview</button>
+<button class="rejected-btn2 bg-white px-4 py-2 border border-red-600 text-red-700">Rejected</button>
+</div>
+</div>
+<div>
+<button class="delete-btn bg-red-500 text-white w-8 h-8 rounded-full flex items-center justify-center">🗑</button>
+</div>
+</div>
 
+<!-- CARD 2 -->
+<div class="flex justify-between border border-blue-800 p-4 card">
+<div class="space-y-4">
+<p class="jobName text-4xl">Cloud Security Engineer</p>
+<p class="PName">Cybersecurity Specialist</p>
+<p class="status">Remote . Full Time . $120,000-$160,000</p>
+<p class="light inline-block bg-gray-300 px-3 py-1 rounded">Not Applied</p>
+<p class="notes">Secure cloud infrastructure.</p>
 
+<div class="flex gap-5">
+<button class="interview-btn2 bg-white px-4 py-2 border border-green-500 text-green-600">Interview</button>
+<button class="rejected-btn2 bg-white px-4 py-2 border border-red-600 text-red-700">Rejected</button>
+</div>
+</div>
+<div>
+<button class="delete-btn bg-red-500 text-white w-8 h-8 rounded-full flex items-center justify-center">🗑</button>
+</div>
+</div>
 
-          <div>
-             <p class="notes">Build cross-platfrom mobile applications using react native.</p>
-          </div>
-           
-          
-          <!-- part 4 -->
-           <div class="flex gap-5">
-            <button class="interview2-btn bg-white px-4 py-2 border-1 border-green-500 text-green-600">Interview</button>
-            <button class="rejected2-btn bg-white px-4 py-2 border-1 border-red-600 text-red-700">Rejected</button>
-           </div>
-           </div>
-        
-         <!-- main part 2 -->
-         <div>
-            <button class="delete-btn bg-blue-300 px-4 py-2 ">Delete</button>
-         </div>
-         </div>
-        </section>
-      </main>
+<!-- CARD 3 -->
+<div class="flex justify-between border border-blue-800 p-4 card">
+<div class="space-y-4">
+<p class="jobName text-4xl">Frontend Web Developer</p>
+<p class="PName">React / Vue Developer</p>
+<p class="status">Remote . Full Time . $90,000-$130,000</p>
+<p class="light inline-block bg-gray-300 px-3 py-1 rounded">Not Applied</p>
+<p class="notes">Build responsive UI components.</p>
+
+<div class="flex gap-5">
+<button class="interview-btn2 bg-white px-4 py-2 border border-green-500 text-green-600">Interview</button>
+<button class="rejected-btn2 bg-white px-4 py-2 border border-red-600 text-red-700">Rejected</button>
+</div>
+</div>
+<div>
+<button class="delete-btn bg-red-500 text-white w-8 h-8 rounded-full flex items-center justify-center">🗑</button>
+</div>
+</div>
+
+<!-- CARD 4 -->
+<div class="flex justify-between border border-blue-800 p-4 card">
+<div class="space-y-4">
+<p class="jobName text-4xl">Backend API Engineer</p>
+<p class="PName">Node.js Developer</p>
+<p class="status">Remote . Full Time . $110,000-$150,000</p>
+<p class="light inline-block bg-gray-300 px-3 py-1 rounded">Not Applied</p>
+<p class="notes">Design scalable REST APIs.</p>
+
+<div class="flex gap-5">
+<button class="interview-btn2 bg-white px-4 py-2 border border-green-500 text-green-600">Interview</button>
+<button class="rejected-btn2 bg-white px-4 py-2 border border-red-600 text-red-700">Rejected</button>
+</div>
+</div>
+<div>
+<button class="delete-btn bg-red-500 text-white w-8 h-8 rounded-full flex items-center justify-center">🗑</button>
+</div>
+</div>
+
+<!-- CARD 5 -->
+<div class="flex justify-between border border-blue-800 p-4 card">
+<div class="space-y-4">
+<p class="jobName text-4xl">AI Research Intern</p>
+<p class="PName">Machine Learning Engineer</p>
+<p class="status">Remote . Internship . $40,000-$60,000</p>
+<p class="light inline-block bg-gray-300 px-3 py-1 rounded">Not Applied</p>
+<p class="notes">Work with AI models.</p>
+
+<div class="flex gap-5">
+<button class="interview-btn2 bg-white px-4 py-2 border border-green-500 text-green-600">Interview</button>
+<button class="rejected-btn2 bg-white px-4 py-2 border border-red-600 text-red-700">Rejected</button>
+</div>
+</div>
+<div>
+<button class="delete-btn bg-red-500 text-white w-8 h-8 rounded-full flex items-center justify-center">🗑</button>
+</div>
+</div>
+
+<!-- CARD 6 -->
+<div class="flex justify-between border border-blue-800 p-4 card">
+<div class="space-y-4">
+<p class="jobName text-4xl">DevOps Engineer</p>
+<p class="PName">Cloud Infrastructure</p>
+<p class="status">Remote . Full Time . $120,000-$170,000</p>
+<p class="light inline-block bg-gray-300 px-3 py-1 rounded">Not Applied</p>
+<p class="notes">CI/CD pipeline management.</p>
+
+<div class="flex gap-5">
+<button class="interview-btn2 bg-white px-4 py-2 border border-green-500 text-green-600">Interview</button>
+<button class="rejected-btn2 bg-white px-4 py-2 border border-red-600 text-red-700">Rejected</button>
+</div>
+</div>
+<div>
+<button class="delete-btn bg-red-500 text-white w-8 h-8 rounded-full flex items-center justify-center">🗑</button>
+</div>
+</div>
+
+<!-- CARD 7 -->
+<div class="flex justify-between border border-blue-800 p-4 card">
+<div class="space-y-4">
+<p class="jobName text-4xl">QA Tester</p>
+<p class="PName">Software Quality Engineer</p>
+<p class="status">Remote . Full Time . $70,000-$100,000</p>
+<p class="light inline-block bg-gray-300 px-3 py-1 rounded">Not Applied</p>
+<p class="notes">Test software performance.</p>
+
+<div class="flex gap-5">
+<button class="interview-btn2 bg-white px-4 py-2 border border-green-500 text-green-600">Interview</button>
+<button class="rejected-btn2 bg-white px-4 py-2 border border-red-600 text-red-700">Rejected</button>
+</div>
+</div>
+<div>
+<button class="delete-btn bg-red-500 text-white w-8 h-8 rounded-full flex items-center justify-center">🗑</button>
+</div>
+</div>
+
+<!-- CARD 8 -->
+<div class="flex justify-between border border-blue-800 p-4 card">
+<div class="space-y-4">
+<p class="jobName text-4xl">Data Analyst</p>
+<p class="PName">Python SQL Analyst</p>
+<p class="status">Remote . Full Time . $80,000-$120,000</p>
+<p class="light inline-block bg-gray-300 px-3 py-1 rounded">Not Applied</p>
+<p class="notes">Analyze business data.</p>
+
+<div class="flex gap-5">
+<button class="interview-btn2 bg-white px-4 py-2 border border-green-500 text-green-600">Interview</button>
+<button class="rejected-btn2 bg-white px-4 py-2 border border-red-600 text-red-700">Rejected</button>
+</div>
+</div>
+<div>
+<button class="delete-btn bg-red-500 text-white w-8 h-8 rounded-full flex items-center justify-center">🗑</button>
+</div>
+</div>
+
+<!-- CARD 9 -->
+<div class="flex justify-between border border-blue-800 p-4 card">
+<div class="space-y-4">
+<p class="jobName text-4xl">Cybersecurity Analyst</p>
+<p class="PName">Security Monitoring</p>
+<p class="status">Remote . Full Time . $110,000-$140,000</p>
+<p class="light inline-block bg-gray-300 px-3 py-1 rounded">Not Applied</p>
+<p class="notes">Threat detection.</p>
+
+<div class="flex gap-5">
+<button class="interview-btn2 bg-white px-4 py-2 border border-green-500 text-green-600">Interview</button>
+<button class="rejected-btn2 bg-white px-4 py-2 border border-red-600 text-red-700">Rejected</button>
+</div>
+</div>
+<div>
+<button class="delete-btn bg-red-500 text-white w-8 h-8 rounded-full flex items-center justify-center">🗑</button>
+</div>
+</div>
+
+<!-- CARD 10 -->
+<div class="flex justify-between border border-blue-800 p-4 card">
+<div class="space-y-4">
+<p class="jobName text-4xl">Software Engineer</p>
+<p class="PName">Full Stack Developer</p>
+<p class="status">Remote . Full Time . $140,000-$180,000</p>
+<p class="light inline-block bg-gray-300 px-3 py-1 rounded">Not Applied</p>
+<p class="notes">Build enterprise systems.</p>
+
+<div class="flex gap-5">
+<button class="interview-btn2 bg-white px-4 py-2 border border-green-500 text-green-600">Interview</button>
+<button class="rejected-btn2 bg-white px-4 py-2 border border-red-600 text-red-700">Rejected</button>
+</div>
+</div>
+<div>
+<button class="delete-btn bg-red-500 text-white w-8 h-8 rounded-full flex items-center justify-center">🗑</button>
+</div>
+</div>
+
+</section>
+
+</main>
+
       <script src="project.js"></script>
     </body>
     </html>
